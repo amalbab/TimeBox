@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+</head>
+<body onload = "myfunction_onload()">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/schedule.js') }}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script  src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+    <div id = "wrapper">
+        <div id = "input" >
+            <h1" class = "title">TimeBox</h1>
+
+            <textarea rows="20" cols="35" name='data' id='data' class="round-corners"></textarea>
+            <button type="submit" onclick='myfunction_clickevent()' class = 'round-corners'>Create Schedule!</button>
+            <button type="submit" onclick='myfunction_schedule()' class = 'round-corners' id = 'schedule-button'>Add to Google Calendar!</button>
+
+        </div>
+        <div id = "schedule" class='container'>
+        <div class="cd-schedule loading">
+            <div class="timeline">
+                <ul>
+                    <li><span>09:00</span></li>
+                    <li><span>09:30</span></li>
+                    <li><span>10:00</span></li>
+                    <li><span>10:30</span></li>
+                    <li><span>11:00</span></li>
+                    <li><span>11:30</span></li>
+                    <li><span>12:00</span></li>
+                    <li><span>12:30</span></li>
+                    <li><span>13:00</span></li>
+                    <li><span>13:30</span></li>
+                    <li><span>14:00</span></li>
+                    <li><span>14:30</span></li>
+                    <li><span>15:00</span></li>
+                    <li><span>15:30</span></li>
+                    <li><span>16:00</span></li>
+                    <li><span>16:30</span></li>
+                    <li><span>17:00</span></li>
+                    <li><span>17:30</span></li>
+                    <li><span>18:00</span></li>
+                </ul>
+            </div> <!-- .timeline -->
+
+            <div class="events">
+                <ul class="wrap">
+                    <li class="events-group">
+                        <div class="top-info"><span>Monday</span></div>
+                        <ul id = "monday-events">
+                        </ul>
+                    </li>
+
+                    <li class="events-group">
+                        <div class="top-info"><span>Tuesday</span></div>
+
+                        <ul id = "tuesday-events">
+                        </ul>
+                    </li>
+
+                    <li class="events-group">
+                        <div class="top-info"><span>Wednesday</span></div>
+
+                        <ul id = "wednesday-events">
+                        </ul>
+                    </li>
+
+                    <li class="events-group">
+                        <div class="top-info"><span>Thursday</span></div>
+
+                        <ul id = "thursday-events">
+                        </ul>
+                    </li>
+
+                    <li class="events-group">
+                        <div class="top-info"><span>Friday</span></div>
+
+                        <ul id = "friday-events">
+                        </ul>
+                    </li>
+              <!--        -->
+              <li class="events-group">
+                        <div class="top-info"><span>Saturday</span></div>
+                        <ul id = "saturday-events">
+                        </ul>
+                    </li>
+        <!--        -->
+              
+              <!--        -->
+              <li class="events-group">
+                        <div class="top-info"><span>Sunday</span></div>
+                        <ul id = "sunday-events">
+                            <li class="single-event" data-start="09:30" data-end="10:30" data-event="event-1">
+                                <a href="#0">
+                                    <em class="event-name">Abs Circuit</em>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+        <!--        -->
+                </ul>
+            </div>
+
+            <div class="event-modal">
+                <header class="header">
+                    <div class="content">
+                        <span class="event-date"></span>
+                        <h3 class="event-name"></h3>
+                    </div>
+
+                    <div class="header-bg"></div>
+                </header>
+
+                <div class="body">
+                    <div class="event-info"></div>
+                    <div class="body-bg"></div>
+                </div>
+
+                <a href="#0" class="close">Close</a>
+            </div>
+
+            <div class="cover-layer"></div>
+        </div> 
+        </div>
+        <div id = "task-visuals" class="container"></div>
+
+    </div>
+
+
+
+
+</body>
+</html>
